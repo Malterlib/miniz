@@ -387,7 +387,8 @@ extern "C"
                             else
                                 tree_cur = pTree[-tree_cur - 1];
                         }
-                        tree_cur -= ((rev_code >>= 1) & 1);
+                        rev_code >>= 1;
+                        tree_cur -= (rev_code & 1);
                         pTree[-tree_cur - 1] = (mz_int16)sym_index;
                     }
                     if (r->m_type == 2)
